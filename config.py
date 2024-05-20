@@ -10,4 +10,4 @@
 # server=os.environ['SERVER']
 
 # # DATABASE_CONNECTION=f'{server}://{user}:{pwd}@{host}/{database}'
-DATABASE_CONNECTION = 'postgresql://admin:75hvySMo6nfAzcupuKlnKMq44gKoBOCL@dpg-cp53stocmk4c73es9di0-a.oregon-postgres.render.com/sisvita_gcj3'
+DATABASE_CONNECTION = 'postgresql://personal_g9:sisvitag9@dpg-cp53stocmk4c73es9di0-a.oregon-postgres.render.com/sisvita_gcj3'
