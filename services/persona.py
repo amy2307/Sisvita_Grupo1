@@ -4,13 +4,13 @@ from utils.db import db
 
 personas=Blueprint('personas', __name__)
 
-@personas.route('/personass/v1', methods=['GET'])
+@personas.route('/personas', methods=['GET'])
 def getMensaje():
     result={}
     result["data"]='sisvita-crud-backend'
     return jsonify(result)
 
-@personas.route('/personass/v1/listar', methods=['GET'])
+@personas.route('/personas/listar', methods=['GET'])
 def getPersonas():
     result={}
     personas=Persona.query.all()
@@ -19,11 +19,7 @@ def getPersonas():
     result["msg"]="Se recupero los datos sin inconvenientes"
     return jsonify(result), 200
 
-
-
-
-
-@personas.route('/personass/v1/insert', methods=['POST'])
+@personas.route('/personas/insert', methods=['POST'])
 def insert():
     result={}
     body=request.get_json()
@@ -48,7 +44,7 @@ def insert():
     return jsonify(result),201
 
 
-@personas.route('/personass/v1/update', methods=['POST'])
+@personas.route('/personas/update', methods=['POST'])
 def update():
     result={}
     body=request.get_json()
@@ -85,7 +81,7 @@ def update():
     return jsonify(result),202
 
 
-@personas.route('/personass/v1/delete', methods=['POST'])
+@personas.route('/personas/delete', methods=['POST'])
 def delete():
     result={}
     body=request.get_json()
