@@ -6,7 +6,12 @@ test_preguntas = Blueprint('test_preguntas', __name__)
 
 @test_preguntas.route('/test_preguntas/listar', methods=['GET'])
 def get_test_preguntas():
-    test_preguntas = TestPregunta.query.all()
+    test_id = request.args.get('test_id')
+    if test_id:
+        test_preguntas = TestPregunta.query.filter_by(test_id=test_id).all()
+    else:
+        test_preguntas = TestPregunta.query.all()
+
     result = [{"pregunta_id": pregunta.pregunta_id, 
                "test_id": pregunta.test_id,
                "texto_pregunta": pregunta.texto_pregunta,
